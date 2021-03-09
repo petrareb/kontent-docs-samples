@@ -3,13 +3,13 @@
 using Kentico.Kontent.Delivery;
 
 // Creates an instance of the delivery client
-// ProTip: Use DI for this in your apps https://docs.kontent.ai/net-register-client
+// Tip: Use DI for this in your apps https://docs.kontent.ai/net-register-client
 IDeliveryClient client = DeliveryClientBuilder
       .WithProjectId("<YOUR_PROJECT_ID>")
       .Build();
 
 // Gets specific elements of 3 articles ordered by the "Post date" element
-// ProTip: Use https://docs.kontent.ai/net-strong-types
+// Tip: Use https://docs.kontent.ai/net-strong-types
 IDeliveryItemListingResponse<Article> response = await client.GetItemsAsync<Article>(
     new EqualsFilter("system.type", "article"),
     new LimitParameter(3)
